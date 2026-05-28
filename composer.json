@@ -1,0 +1,17 @@
+{
+    "name": "transito/personal-blog-web-app",
+    "autoload": {
+        "psr-4": {
+            "Transito\\PersonalBlogWebApp\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Ackin.Dev",
+            "email": "ackinlino123@gmail.com"
+        }
+    ],
+    "require": {
+        "nikic/fast-route": "^1.3"
+    }
+}
