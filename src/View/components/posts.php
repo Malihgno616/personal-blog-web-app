@@ -48,4 +48,3 @@
     <a href="<?= url("articles") ?>" class="see-more">MORE ARTICLES</a>
     
 </article>
-    ''
