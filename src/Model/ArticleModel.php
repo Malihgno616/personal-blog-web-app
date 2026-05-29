@@ -36,5 +36,19 @@ class ArticleModel {
         return null;
     }
 
+    public function paginatedArticles($limit, $offset) {
+
+        return [
+            "posts" => array_slice($this->db["articles"], $offset, $limit),
+            "total" => count($this->db["articles"]),
+            "pages" => ceil(count($this->db["articles"]) / $limit),
+            "limit" => $limit,
+            "offset" => $offset
+        ];
+  
+    }
+
 }
 
+// $articleModel = new ArticleModel();
+// var_dump($articleModel->paginatedArticles(3, 0));

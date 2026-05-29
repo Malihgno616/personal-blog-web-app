@@ -62,6 +62,8 @@ switch ($routeInfo[0]) {
         $handler = $routeInfo[1];
         switch ($handler) {
             case 'articles':
+                $limit = 3;
+                $offset = 0;
                 $articleController = new ArticleController();
                 require_once __DIR__ . '/View/pages/articles.php';
                 break;
