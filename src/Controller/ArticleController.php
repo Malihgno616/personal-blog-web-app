@@ -13,11 +13,20 @@ class ArticleController {
         $this->model = new ArticleModel();
     }
 
-    public function show($id) {
+    public function showRecentPosts($id) {
         $title = $this->model->getTitle($id);
         $description = $this->model->getDescription($id);
         $date = $this->model->getDate($id);
 
         require __DIR__ . "/../View/components/posts.php";
     }
+
+    public function showPost($id) {
+        $title = $this->model->getTitle($id);
+        $description = $this->model->getDescription($id);
+        $date = $this->model->getDate($id);
+
+        require __DIR__ . "/../View/components/post.php";
+    }
+
 }

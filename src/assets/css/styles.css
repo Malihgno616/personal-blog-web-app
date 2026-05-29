@@ -121,6 +121,43 @@ article .posts .post-item {
   text-decoration: underline;
 }
 
+.detailed-post {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #cccccc87;
+  border-radius: 8px;
+  background-color: #fff;
+}
+
+.detailed-post .detailed-title {
+  font-size: 2.5em;
+  color: #900202;
+  margin-bottom: 10px;
+}
+
+.detailed-post .detailed-date {
+  font-size: 1.2em;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.detailed-post .detailed-description {
+  font-size: 1.3em;
+  color: #232323;
+  line-height: 1.8;
+  text-align: justify;
+}
+
+.detailed-post .back-to {
+  display: block;
+  text-align: center;
+  margin-top: 30px;
+  font-size: 1.2em;
+  color: #900202;
+  text-decoration: none;
+}
+
 footer {
   background-color: #333;
   color: #fff;

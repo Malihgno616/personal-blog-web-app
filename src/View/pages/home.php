@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
-    <link rel="stylesheet" href="./assets/css/styles.css">
+    <link rel="stylesheet" href="<?= url('assets/css/styles.css') ?>">
 </head>
 <body>
     <?php include __DIR__ . '/../layout/header.php' ?>
@@ -14,8 +14,8 @@
             <article>
                 <h2>Recent Posts</h2>
                 <?php 
-                    for($x = 1; $x <= 6; $x++) {
-                        $arcticleController->show($x);
+                    for($x = 6; $x > 0; $x--) {
+                        $articleController->showRecentPosts($x);
                     }
                 ?>
             </article>

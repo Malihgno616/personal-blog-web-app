@@ -13,6 +13,8 @@ use FastRoute\Dispatcher;
 $httpMethod = $_SERVER['REQUEST_METHOD'];
 $uri = $_SERVER['REQUEST_URI'];
 
+$id = $_GET['/article'] ?? null;
+
 $uri = rawurldecode($uri);
 
 $basePath = '/personal-blog-web-app';
@@ -41,6 +43,7 @@ $dispatcher = FastRoute\simpleDispatcher(function(FastRoute\RouteCollector $r) {
     $r->addRoute('GET', '/admin', 'admin');
     $r->addRoute('GET', '/login-adm', 'login-adm');
     $r->addRoute('GET', '/logout', 'logout');
+    $r->addRoute('GET', '/article/{id}', 'article');
 });
     
 $routeInfo = $dispatcher->dispatch($httpMethod, $uri);
@@ -59,7 +62,13 @@ switch ($routeInfo[0]) {
         $handler = $routeInfo[1];
         switch ($handler) {
             case 'articles':
+                $articleController = new ArticleController();
                 require_once __DIR__ . '/View/pages/articles.php';
+                break;
+            case 'article':
+                $articleController = new ArticleController();
+                $id = $routeInfo[2]['id'];
+                require_once __DIR__ . '/View/pages/article.php';
                 break;
             case 'admin':
                 require_once __DIR__ . '/View/pages/admin-page.php';
@@ -71,7 +80,7 @@ switch ($routeInfo[0]) {
                 require_once __DIR__ . '/View/pages/logout.php';
                 break;
             default:
-                $arcticleController = new ArticleController();
+                $articleController = new ArticleController();
                 require_once __DIR__ . '/View/pages/home.php';
         }
         break;
