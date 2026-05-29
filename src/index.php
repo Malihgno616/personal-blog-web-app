@@ -10,8 +10,6 @@ require_once __DIR__ . '/../src/Controller/ArticleController.php';
 use Controller\ArticleController;
 use FastRoute\Dispatcher;
 
-$arcticleController = new ArticleController();
-
 $httpMethod = $_SERVER['REQUEST_METHOD'];
 $uri = $_SERVER['REQUEST_URI'];
 
@@ -73,8 +71,8 @@ switch ($routeInfo[0]) {
                 require_once __DIR__ . '/View/pages/logout.php';
                 break;
             default:
+                $arcticleController = new ArticleController();
                 require_once __DIR__ . '/View/pages/home.php';
-
         }
         break;
 }

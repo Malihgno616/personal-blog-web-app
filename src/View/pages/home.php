@@ -11,7 +11,14 @@
     <main>
         <h1 id="title-page">Welcome to my Personal Blog</h1>
         <section>
-            <?php include __DIR__ . "/../components/posts.php" ?>
+            <article>
+                <h2>Recent Posts</h2>
+                <?php 
+                    for($x = 1; $x <= 6; $x++) {
+                        $arcticleController->show($x);
+                    }
+                ?>
+            </article>
         </section>
     </main>
     <?php include __DIR__ . '/../layout/footer.php' ?>
