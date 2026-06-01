@@ -5,6 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <link rel="stylesheet" href="<?= url('assets/css/styles.css') ?>">
+    <style>
+        .read-more {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            padding: 10px 20px;
+            color: #c20000;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .read-more:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
     <?php include __DIR__ . '/../layout/header.php' ?>
@@ -18,6 +32,9 @@
                         $articleController->showRecentPosts($x);
                     }
                 ?>
+                <a href="<?= url('articles/') ?>" class="read-more">
+                    READ MORE ARTICLES
+                </a>
             </article>
         </section>
     </main>
