@@ -41,7 +41,7 @@ $dispatcher = FastRoute\simpleDispatcher(function(FastRoute\RouteCollector $r) {
     $r->addRoute('GET', '/', 'home');
     $r->addRoute('GET', '/articles', 'articles');
     $r->addRoute('GET', '/admin', 'admin');
-    $r->addRoute('GET', '/login-adm', 'login-adm');
+    $r->addRoute('GET', '/login', 'login');
     $r->addRoute('GET', '/logout', 'logout');
     $r->addRoute('GET', '/article/{id}', 'article');
     $r->addRoute('GET', '/articles/{page:\d+}', 'articles');
@@ -79,8 +79,8 @@ switch ($routeInfo[0]) {
             case 'admin':
                 require_once __DIR__ . '/View/pages/admin-page.php';
                 break;
-            case 'login-adm':
-                require_once __DIR__ . '/View/pages/login-adm.php';
+            case 'login':
+                require_once __DIR__ . '/View/pages/login.php';
                 break;
             case 'logout':
                 require_once __DIR__ . '/View/pages/logout.php';

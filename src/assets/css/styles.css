@@ -188,6 +188,48 @@ article .posts .post-item {
   text-decoration: none;
 }
 
+#login-container {
+  margin: 125px auto;
+  padding: 20px;
+  max-width: 500px;
+}
+
+#login-section {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #cccccc87;
+  border-radius: 8px;
+  background-color: #fff;
+}
+
+#login-section form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2em;
+}
+
+#login-section form input {
+  padding: 10px;
+  border: 1px solid #cccccc87;
+  border-radius: 5px;
+}
+
+#login-section form label {
+  font-size: 1.2em;
+  color: #333;
+}
+
+#login-section form button {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #900202;
+  color: #fff;
+  font-size: 1.2em;
+  cursor: pointer;
+}
+
 footer {
   background-color: #333;
   color: #fff;
