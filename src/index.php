@@ -44,6 +44,7 @@ $dispatcher = FastRoute\simpleDispatcher(function(FastRoute\RouteCollector $r) {
     $r->addRoute('GET', '/login-adm', 'login-adm');
     $r->addRoute('GET', '/logout', 'logout');
     $r->addRoute('GET', '/article/{id}', 'article');
+    $r->addRoute('GET', '/articles/{page:\d+}', 'articles');
 });
     
 $routeInfo = $dispatcher->dispatch($httpMethod, $uri);
@@ -62,9 +63,12 @@ switch ($routeInfo[0]) {
         $handler = $routeInfo[1];
         switch ($handler) {
             case 'articles':
-                $limit = 3;
-                $offset = 0;
                 $articleController = new ArticleController();
+                $page = isset($routeInfo[2]['page'])
+                    ? (int)$routeInfo[2]['page']
+                    : 1;
+                $limit = 3;
+                $offset = ($page - 1) * $limit;
                 require_once __DIR__ . '/View/pages/articles.php';
                 break;
             case 'article':

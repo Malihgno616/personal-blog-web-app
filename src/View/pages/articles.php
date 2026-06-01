@@ -10,7 +10,7 @@
     <?php include __DIR__ . '/../layout/header.php' ?>
     <main>
         <h1 id="title-page">Articles!</h1>
-        <?php $articleController->paginatedPosts(3, 0) ?>
+        <?php $articleController->paginatedPosts($limit, $offset, $page) ?>
     </main>
     <?php include __DIR__ . '/../layout/footer.php' ?>
 </body>

@@ -32,15 +32,10 @@ class ArticleController {
         require __DIR__ . "/../View/components/post.php";
     }
 
-    public function paginatedPosts($limit, $offset)
+    public function paginatedPosts($limit, $offset, $page)
     {
         $data = $this->model->paginatedArticles($limit, $offset);
-
-        $data['limit'] = $limit;
-        $data['offset'] = $offset;
-        $data['pages'] = ceil(count($this->model->paginatedArticles($limit, 0)) / $limit);
-        $data['posts'] = $this->model->paginatedArticles($limit, $offset);
-        
+        $data['page'] = $page;
         require __DIR__ . "/../View/components/paginated-posts.php";
     }
 
